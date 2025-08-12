@@ -2,26 +2,133 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Notre Boutique Électronique</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Électronique — Composants et matériel électronique</title>
+    <meta name="description" content="Découvrez notre sélection de composants électroniques : ESP32, Arduino, modules et accessoires. Livraison rapide, prix compétitifs.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="style.css">
+    <meta property="og:title" content="Boutique Électronique — Composants et matériel">
+    <meta property="og:description" content="Composants électroniques de qualité : ESP32, Arduino, modules et accessoires.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://votre-domaine.com">
+    <meta property="og:image" content="https://votre-domaine.com/assets/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
-    <header>
-        <h1>Bienvenue à Notre Boutique Électronique</h1>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="produits.html">Produits</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">Boutique Électronique</a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">☰</button>
+            <nav id="site-nav" class="site-nav" aria-label="Navigation principale">
+                <a href="index.html" class="nav-link active">Accueil</a>
+                <a href="produits.html" class="nav-link">Produits</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
     </header>
+
     <main>
-        <section>
-            <h2>Présentation</h2>
-            <p>Nous vendons une vaste gamme de matériels électroniques pour vos projets et besoins technologiques.</p>
-            <p>Veuillez vite vous y rendre ou nous contacter directement.</p>
-            <a href="produits.html" class="button">Voir les produits</a>
+        <section class="hero">
+            <div class="container">
+                <h1>Bienvenue dans votre boutique électronique</h1>
+                <p class="hero-subtitle">Découvrez notre vaste gamme de composants électroniques pour tous vos projets technologiques</p>
+                <a href="produits.html" class="btn btn-primary">Voir nos produits</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Pourquoi nous choisir ?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🚚</div>
+                        <h3>Livraison rapide</h3>
+                        <p>Expédition sous 24h partout au pays</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✅</div>
+                        <h3>Qualité garantie</h3>
+                        <p>Composants testés et certifiés</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3>Support technique</h3>
+                        <p>Assistance pour vos projets</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-products">
+            <div class="container">
+                <h2>Produits populaires</h2>
+                <div class="product-grid">
+                    <article class="product-card">
+                        <img loading="lazy" src="image/esp32.png" alt="Module ESP32 WiFi/Bluetooth" class="product-image">
+                        <h3 class="product-title">ESP32 WiFi</h3>
+                        <p class="product-price">9 000 FCFA</p>
+                        <p class="product-desc">Module WiFi/Bluetooth très performant pour vos projets IoT.</p>
+                        <a href="produits.html" class="btn">Voir détails</a>
+                    </article>
+                    <article class="product-card">
+                        <img loading="lazy" src="image/Nano.png" alt="Arduino Nano" class="product-image">
+                        <h3 class="product-title">Arduino Nano</h3>
+                        <p class="product-price">9 000 FCFA</p>
+                        <p class="product-desc">Microcontrôleur compact et polyvalent.</p>
+                        <a href="produits.html" class="btn">Voir détails</a>
+                    </article>
+                    <article class="product-card">
+                        <img loading="lazy" src="image/pont.png" alt="Pont en H" class="product-image">
+                        <h3 class="product-title">Pont en H</h3>
+                        <p class="product-price">9 000 FCFA</p>
+                        <p class="product-desc">Contrôleur de moteur bidirectionnel.</p>
+                        <a href="produits.html" class="btn">Voir détails</a>
+                    </article>
+                </div>
+            </div>
         </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>📍 Votre adresse</p>
+                    <p>📞 +225 XX XX XX XX</p>
+                    <p>✉️ contact@votre-boutique.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Horaires</h3>
+                    <p>Lun - Ven : 8h - 18h</p>
+                    <p>Sam : 9h - 16h</p>
+                    <p>Dim : Fermé</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="WhatsApp">📱</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Boutique Électronique. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const siteNav = document.querySelector('.site-nav');
+        
+        navToggle.addEventListener('click', () => {
+            const isOpen = siteNav.classList.contains('open');
+            siteNav.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', !isOpen);
+        });
+    </script>
 </body>
 </html>
-
