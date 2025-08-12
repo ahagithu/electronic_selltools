@@ -2,25 +2,294 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Contact - Boutique Électronique</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Boutique Électronique</title>
+    <meta name="description" content="Contactez-nous pour vos besoins en composants électroniques. Conseil technique, devis personnalisé et support client.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="style.css">
+    <meta property="og:title" content="Contact — Boutique Électronique">
+    <meta property="og:description" content="Contactez notre équipe pour vos projets électroniques.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://votre-domaine.com/contact.html">
+    <meta property="og:image" content="https://votre-domaine.com/assets/og-image.jpg">
 </head>
 <body>
-    <header>
-        <h1>Contactez-nous</h1>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="produits.html">Produits</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">Boutique Électronique</a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">☰</button>
+            <nav id="site-nav" class="site-nav" aria-label="Navigation principale">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="produits.html" class="nav-link">Produits</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </nav>
+        </div>
     </header>
-    <main>
-        <form action="https://formspree.io/f/your-id" method="POST">
-            <label>Nom :</label><input type="text" name="nom" required><br>
-            <label>Email :</label><input type="email" name="email" required><br>
-            <label>Message :</label><textarea name="message" required></textarea><br>
-            <button type="submit">Envoyer</button>
-        </form>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Contactez-nous</h1>
+            <p class="page-subtitle">Notre équipe est là pour vous accompagner dans vos projets électroniques</p>
+        </div>
+
+        <div class="contact-layout">
+            <section class="contact-form-section">
+                <h2>Envoyez-nous un message</h2>
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+                    <div class="form-group">
+                        <label for="nom">Nom complet *</label>
+                        <input id="nom" name="nom" type="text" required aria-describedby="nom-error">
+                        <span class="error-message" id="nom-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Adresse email *</label>
+                        <input id="email" name="email" type="email" required aria-describedby="email-error">
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telephone">Téléphone</label>
+                        <input id="telephone" name="telephone" type="tel" aria-describedby="telephone-help">
+                        <small id="telephone-help" class="form-help">Optionnel - pour un contact plus rapide</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sujet">Sujet</label>
+                        <select id="sujet" name="sujet">
+                            <option value="">Choisissez un sujet</option>
+                            <option value="commande">Passer une commande</option>
+                            <option value="conseil">Conseil technique</option>
+                            <option value="devis">Demande de devis</option>
+                            <option value="sav">Service après-vente</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" required aria-describedby="message-error" placeholder="Décrivez votre projet ou votre demande..."></textarea>
+                        <span class="error-message" id="message-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="newsletter" value="oui">
+                            <span class="checkmark"></span>
+                            Je souhaite recevoir les actualités et promotions par email
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <span class="btn-text">Envoyer le message</span>
+                        <span class="btn-loading" style="display: none;">Envoi en cours...</span>
+                    </button>
+
+                    <div class="form-status" aria-live="polite"></div>
+                </form>
+            </section>
+
+            <aside class="contact-info-section">
+                <h2>Nos coordonnées</h2>
+                
+                <div class="contact-card">
+                    <h3>📍 Adresse</h3>
+                    <p>123 Rue de l'Électronique<br>
+                    Abidjan, Côte d'Ivoire<br>
+                    BP 1234</p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>📞 Téléphone</h3>
+                    <p><a href="tel:+22512345678">+225 12 34 56 78</a></p>
+                    <p><a href="https://wa.me/22512345678" target="_blank" rel="noopener">WhatsApp</a></p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>✉️ Email</h3>
+                    <p><a href="mailto:contact@votre-boutique.com">contact@votre-boutique.com</a></p>
+                    <p><a href="mailto:technique@votre-boutique.com">technique@votre-boutique.com</a></p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>🕒 Horaires d'ouverture</h3>
+                    <div class="horaires">
+                        <p><strong>Lundi - Vendredi :</strong> 8h00 - 18h00</p>
+                        <p><strong>Samedi :</strong> 9h00 - 16h00</p>
+                        <p><strong>Dimanche :</strong> Fermé</p>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h3>🌐 Réseaux sociaux</h3>
+                    <div class="social-links">
+                        <a href="#" target="_blank" rel="noopener" aria-label="Notre page Facebook">📘 Facebook</a>
+                        <a href="#" target="_blank" rel="noopener" aria-label="Notre compte Instagram">📷 Instagram</a>
+                        <a href="#" target="_blank" rel="noopener" aria-label="Notre chaîne YouTube">📺 YouTube</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <section class="faq-section">
+            <h2>Questions fréquentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Quels sont vos délais de livraison ?</h3>
+                    <p>Nous expédions sous 24h pour les produits en stock. Livraison en 2-5 jours selon votre localisation.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Proposez-vous un support technique ?</h3>
+                    <p>Oui, notre équipe peut vous conseiller dans le choix des composants et vous aider dans vos projets.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Acceptez-vous les commandes en gros ?</h3>
+                    <p>Absolument ! Contactez-nous pour un devis personnalisé sur les commandes importantes.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Quelle est votre politique de retour ?</h3>
+                    <p>Retour possible sous 14 jours pour les produits non utilisés, dans leur emballage d'origine.</p>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>📍 Votre adresse</p>
+                    <p>📞 +225 XX XX XX XX</p>
+                    <p>✉️ contact@votre-boutique.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Horaires</h3>
+                    <p>Lun - Ven : 8h - 18h</p>
+                    <p>Sam : 9h - 16h</p>
+                    <p>Dim : Fermé</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="WhatsApp">📱</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Boutique Électronique. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const siteNav = document.querySelector('.site-nav');
+        
+        navToggle.addEventListener('click', () => {
+            const isOpen = siteNav.classList.contains('open');
+            siteNav.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', !isOpen);
+        });
+
+        // Form validation and submission
+        const form = document.querySelector('.contact-form');
+        const statusDiv = document.querySelector('.form-status');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Clear previous errors
+            clearErrors();
+            
+            // Validate form
+            if (!validateForm()) {
+                return;
+            }
+
+            // Show loading state
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    statusDiv.innerHTML = '<div class="success-message">✅ Message envoyé avec succès ! Nous vous répondrons rapidement.</div>';
+                    form.reset();
+                } else {
+                    throw new Error('Erreur lors de l\'envoi');
+                }
+            } catch (error) {
+                statusDiv.innerHTML = '<div class="error-message">❌ Erreur lors de l\'envoi. Veuillez réessayer ou nous contacter directement.</div>';
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+            }
+        });
+
+        function validateForm() {
+            let isValid = true;
+            
+            const nom = form.querySelector('#nom');
+            const email = form.querySelector('#email');
+            const message = form.querySelector('#message');
+
+            if (!nom.value.trim()) {
+                showError('nom-error', 'Le nom est requis');
+                isValid = false;
+            }
+
+            if (!email.value.trim()) {
+                showError('email-error', 'L\'email est requis');
+                isValid = false;
+            } else if (!isValidEmail(email.value)) {
+                showError('email-error', 'Format d\'email invalide');
+                isValid = false;
+            }
+
+            if (!message.value.trim()) {
+                showError('message-error', 'Le message est requis');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function showError(elementId, message) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+
+        function clearErrors() {
+            const errorElements = form.querySelectorAll('.error-message');
+            errorElements.forEach(el => {
+                el.textContent = '';
+                el.style.display = 'none';
+            });
+            statusDiv.innerHTML = '';
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+    </script>
 </body>
 </html>
