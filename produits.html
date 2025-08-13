@@ -20,36 +20,93 @@
   <main class="container">
     
     <!-- ESP32 -->
-    <section class="produit card">
-      <h3>ESP32 WiFi</h3>
-      <p class="price">Prix : 9 000 FCFA</p>
-      <div class="media">
-        <img src="image/esp32.png" alt="Module ESP32 WiFi/Bluetooth" />
-        <video controls preload="metadata" src="videos/cccc.mp4"></video>
-      </div>
-      <p>Description : Module WiFi/Bluetooth très performant.</p>
+  <!-- ESP32 -->
+<section class="produit card">
+  <h3>ESP32 WiFi/Bluetooth</h3>
+  <p class="price">Prix : 9 000 FCFA</p>
+  <div class="media">
+    <img src="image/esp32.png" alt="Module ESP32 WiFi/Bluetooth" />
+    <video controls preload="metadata" src="videos/cccc.mp4"></video>
+  </div>
 
-      <div class="actions">
-        <a class="button" target="_blank" rel="noopener" href="https://wa.me/22789631595?text=Bonjour%2C%20je%20souhaite%20commander%20ESP32%20WiFi%20(9%20000%20FCFA)%20x1.">Commander via WhatsApp (N°1)</a>
-        <a class="button" target="_blank" rel="noopener" href="https://wa.me/22793033158?text=Bonjour%2C%20je%20souhaite%20commander%20ESP32%20WiFi%20(9%20000%20FCFA)%20x1.">Commander via WhatsApp (N°2)</a>
-      </div>
+  <!-- Bouton pour afficher les détails -->
+  <button onclick="toggleDetails('esp32-details')">Voir détails</button>
 
-      <form action="https://formspree.io/f/mdkdblzw" method="POST" class="order-form">
-        <input type="hidden" name="_subject" value="Commande - ESP32 WiFi" />
-        <input type="hidden" name="_redirect" value="https://ahagithu.github.io/electronic_selltools/merci.html" />
-        <input type="hidden" name="produit" value="ESP32 WiFi" />
-        <input type="hidden" name="prix" value="9000 FCFA" />
-        <label>Nom et prénom :</label>
-        <input type="text" name="nom" required />
-        <label>Téléphone :</label>
-        <input type="tel" name="telephone" required />
-        <label>Quantité :</label>
-        <input type="number" name="quantite" min="1" value="1" required />
-        <label>Email :</label>
-        <input type="email" name="email" />
-        <button type="submit" class="button">Commander par formulaire</button>
-      </form>
-    </section>
+  <!-- Bloc masqué par défaut -->
+  <div id="esp32-details" style="display:none; margin-top:10px;">
+    <h2>Module ESP32 WiFi/Bluetooth</h2>
+    <p>
+      Le <strong>ESP32</strong> est un microcontrôleur puissant et polyvalent intégrant le <strong>WiFi</strong> et le <strong>Bluetooth</strong>.
+      Idéal pour les projets IoT, domotiques, de robotique et d’acquisition de données.
+    </p>
+
+    <h3>Caractéristiques principales :</h3>
+    <ul>
+      <li>Microcontrôleur dual-core Xtensa LX6 cadencé jusqu’à 240 MHz</li>
+      <li>Mémoire : jusqu’à 520 Ko de SRAM + mémoire flash externe</li>
+      <li>Connectivité : WiFi 802.11 b/g/n et Bluetooth v4.2 BLE</li>
+      <li>Nombre de GPIO : environ 34 E/S programmables</li>
+      <li>Interfaces : UART, SPI, I2C, PWM, ADC, DAC, CAN, etc.</li>
+      <li>Tension : 3,0 V à 3,6 V</li>
+      <li>Programmable avec Arduino IDE, PlatformIO, MicroPython, etc.</li>
+    </ul>
+
+    <h3>Avantages :</h3>
+    <ul>
+      <li>Connexion sans fil intégrée</li>
+      <li>Puissance de calcul élevée</li>
+      <li>Grande flexibilité</li>
+      <li>Idéal pour l’IoT</li>
+    </ul>
+
+    <h3>Limitations :</h3>
+    <ul>
+      <li>Consommation électrique plus élevée qu’un Arduino UNO/Nano</li>
+      <li>Nécessite 3,3 V</li>
+      <li>Programmation un peu plus complexe</li>
+    </ul>
+
+    <p>
+      En résumé, le <strong>ESP32</strong> est parfait pour les projets modernes nécessitant connectivité et puissance.
+    </p>
+  </div>
+
+  <!-- Boutons de commande -->
+  <div class="actions" style="margin-top:10px;">
+    <a class="button" target="_blank" rel="noopener" href="https://wa.me/22789631595?text=Bonjour%2C%20je%20souhaite%20commander%20ESP32%20WiFi%20(9%20000%20FCFA)%20x1.">Commander via WhatsApp (N°1)</a>
+    <a class="button" target="_blank" rel="noopener" href="https://wa.me/22793033158?text=Bonjour%2C%20je%20souhaite%20commander%20ESP32%20WiFi%20(9%20000%20FCFA)%20x1.">Commander via WhatsApp (N°2)</a>
+  </div>
+
+  <!-- Formulaire de commande -->
+  <form action="https://formspree.io/f/mdkdblzw" method="POST" class="order-form">
+    <input type="hidden" name="_subject" value="Commande - ESP32 WiFi/Bluetooth" />
+    <input type="hidden" name="_redirect" value="https://ahagithu.github.io/electronic_selltools/merci.html" />
+    <input type="hidden" name="produit" value="ESP32 WiFi/Bluetooth" />
+    <input type="hidden" name="prix" value="9000 FCFA" />
+    <label>Nom et prénom :</label>
+    <input type="text" name="nom" required />
+    <label>Téléphone :</label>
+    <input type="tel" name="telephone" required />
+    <label>Quantité :</label>
+    <input type="number" name="quantite" min="1" value="1" required />
+    <label>Email :</label>
+    <input type="email" name="email" />
+    <button type="submit" class="button">Commander par formulaire</button>
+  </form>
+</section>
+
+<script>
+function toggleDetails(id) {
+  let details = document.getElementById(id);
+  if (details.style.display === "none" || details.style.display === "") {
+    details.style.display = "block";
+  } else {
+    details.style.display = "none";
+  }
+}
+</script>
+
+
 
     <!-- Arduino Nano -->
     <section class="produit card">
@@ -225,6 +282,7 @@
   </script>
 </body>
 </html>
+
 
 
 
