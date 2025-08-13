@@ -18,6 +18,7 @@
   </header>
 
   <main class="container">
+    
     <!-- ESP32 -->
     <section class="produit card">
       <h3>ESP32 WiFi</h3>
@@ -113,6 +114,72 @@
         <button type="submit" class="button">Commander par formulaire</button>
       </form>
     </section>
+
+     <!-- Module nrf24l01 + PA -->
+    <section class="produit card">
+      <h3>Pont en H</h3>
+      <p class="price">Prix : 9 000 FCFA</p>
+      <div class="media">
+        <img src="image/nrf24p.png" alt="Module nrf24l01 + PA" />
+        <video controls preload="metadata" src="videos/cccc.mp4"></video>
+      </div>
+     <p>
+    Le <strong>module NRF24L01 + PA (Power Amplifier)</strong> est une version améliorée du module NRF24L01, conçu pour la communication sans fil en <strong>2,4 GHz</strong> avec une portée étendue grâce à son amplificateur de puissance et son LNA (Low Noise Amplifier) intégré.
+  </p>
+
+  <h3>Caractéristiques principales :</h3>
+  <ul>
+    <li>Fréquence de fonctionnement : 2,4 GHz ISM (Industrial, Scientific, Medical)</li>
+    <li>Protocole : Compatible SPI, peut être utilisé avec Arduino, ESP32, STM32, etc.</li>
+    <li>Portée : Jusqu’à 1 km en champ libre grâce au PA + LNA</li>
+    <li>Tension d’alimentation : 3,3 V (ne pas alimenter en 5 V direct)</li>
+    <li>Courant consommé : ~115 mA en émission maximale, ~26 mA en réception</li>
+    <li>Débit de transmission : 250 kbps, 1 Mbps ou 2 Mbps</li>
+    <li>Antenne : Externe ou PCB longue portée pour améliorer le signal</li>
+    <li>Canaux : 125 canaux différents pour éviter les interférences</li>
+    <li>Mode d’opération : Half-duplex (transmission ou réception, pas simultanément)</li>
+  </ul>
+
+  <h3>Avantages :</h3>
+  <ul>
+    <li>Grande portée, idéal pour robots, drones, stations météo</li>
+    <li>Fiabilité grâce au codage automatique des paquets et retransmission</li>
+    <li>Faible coût et facile à intégrer dans des microcontrôleurs courants</li>
+  </ul>
+
+  <h3>Limitations :</h3>
+  <ul>
+    <li>Nécessite une alimentation stable en 3,3 V</li>
+    <li>Communication half-duplex, donc pas adaptée aux échanges simultanés très rapides</li>
+    <li>Sensible aux interférences dans des environnements saturés en Wi-Fi ou autres appareils 2,4 GHz</li>
+  </ul>
+
+  <p>
+    En résumé, le <strong>NRF24L01 + PA</strong> est parfait pour créer des réseaux sans fil fiables à moyenne et longue distance pour Arduino, ESP32, Raspberry Pi, ou tout projet IoT nécessitant une portée étendue avec un faible coût.
+  </p>
+
+      <div class="actions">
+        <a class="button" target="_blank" rel="noopener" href="https://wa.me/22789631595?text=Bonjour%2C%20je%20souhaite%20commander%20Pont%20en%20H%20(9%20000%20FCFA)%20x1.">Commander via WhatsApp (N°1)</a>
+        <a class="button" target="_blank" rel="noopener" href="https://wa.me/22797456916?text=Bonjour%2C%20je%20souhaite%20commander%20Pont%20en%20H%20(9%20000%20FCFA)%20x1.">Commander via WhatsApp (N°2)</a>
+      </div>
+
+      <form action="https://formspree.io/f/mdkdblzw" method="POST" class="order-form">
+        <input type="hidden" name="_subject" value="Commande - Pont en H" />
+        <input type="hidden" name="_redirect" value="https://ahagithu.github.io/electronic_selltools/merci.html" />
+        <input type="hidden" name="produit" value="Pont en H" />
+        <input type="hidden" name="prix" value="9000 FCFA" />
+        <label>Nom et prénom :</label>
+        <input type="text" name="nom" required />
+        <label>Téléphone :</label>
+        <input type="tel" name="telephone" required />
+        <label>Quantité :</label>
+        <input type="number" name="quantite" min="1" value="1" required />
+        <label>Email :</label>
+        <input type="email" name="email" />
+        <button type="submit" class="button">Commander par formulaire</button>
+      </form>
+    </section>
+    
   </main>
 
   <div id="footer"></div>
@@ -124,3 +191,4 @@
   </script>
 </body>
 </html>
+
