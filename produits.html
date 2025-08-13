@@ -1,223 +1,120 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Produits — Boutique Électronique</title>
-    <meta name="description" content="Découvrez notre catalogue complet de composants électroniques : ESP32, Arduino Nano, ponts en H et bien plus encore.">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="stylesheet" href="style.css">
-    <meta property="og:title" content="Nos Produits — Boutique Électronique">
-    <meta property="og:description" content="Catalogue complet de composants électroniques de qualité.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://votre-domaine.com/produits.html">
-    <meta property="og:image" content="https://votre-domaine.com/assets/og-image.jpg">
+  <meta charset="UTF-8" />
+  <title>Produits — Boutique Électronique</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Catalogue de produits: ESP32, Arduino Nano, Pont en H. Commande par WhatsApp (Niger) ou formulaire Formspree." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <a class="brand" href="index.html">Boutique Électronique</a>
-            <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">☰</button>
-            <nav id="site-nav" class="site-nav" aria-label="Navigation principale">
-                <a href="index.html" class="nav-link">Accueil</a>
-                <a href="produits.html" class="nav-link active">Produits</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </nav>
-        </div>
-    </header>
+  <header class="site-header">
+    <h1>Nos Produits</h1>
+    <nav class="site-nav">
+      <a href="index.html">Accueil</a>
+      <a href="produits.html">Produits</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-    <main class="container">
-        <div class="page-header">
-            <h1>Nos Produits</h1>
-            <p class="page-subtitle">Découvrez notre sélection de composants électroniques de qualité</p>
-        </div>
+  <main class="container">
+    <section class="produit card">
+      <h3>ESP32 WiFi</h3>
+      <p class="price">Prix : 9 000 FCFA</p>
+      <div class="media">
+        <img src="image/esp32.png" alt="Module ESP32 WiFi/Bluetooth" />
+        <video controls preload="metadata" src="videos/cccc.mp4"></video>
+      </div>
+      <p>Description : Module WiFi/Bluetooth très performant.</p>
 
-        <section class="product-grid">
-            <article class="product-card">
-                <img loading="lazy" src="image/esp32.png" alt="Module ESP32 WiFi/Bluetooth" class="product-image" width="300" height="200">
-                <div class="product-content">
-                    <h3 class="product-title">ESP32 WiFi</h3>
-                    <p class="product-price">9 000 FCFA</p>
-                    <p class="product-desc">Module WiFi/Bluetooth très performant pour vos projets IoT. Idéal pour les applications connectées.</p>
-                    <div class="product-media">
-                        <video controls preload="metadata" poster="image/esp32-poster.jpg" class="product-video">
-                            <source src="videos/cccc.mp4" type="video/mp4">
-                            Votre navigateur ne supporte pas la lecture vidéo.
-                        </video>
-                    </div>
-                    <div class="product-actions">
-                        <a href="#" class="btn btn-primary">Commander</a>
-                        <button class="btn btn-secondary" onclick="toggleDetails(this)">Détails</button>
-                    </div>
-                    <div class="product-details" style="display: none;">
-                        <h4>Spécifications techniques :</h4>
-                        <ul>
-                            <li>WiFi 802.11 b/g/n</li>
-                            <li>Bluetooth 4.2 BR/EDR et BLE</li>
-                            <li>Processeur dual-core 240MHz</li>
-                            <li>GPIO, SPI, I2C, UART</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
+      <div class="actions">
+        <a class="button" target="_blank" rel="noopener" href="https://wa.me/22789631595?text=Bonjour%2C%20je%20souhaite%20commander%20ESP32%20WiFi%20(9%20000%20FCFA)%20x1.">Commander via WhatsApp (N°1)</a>
+        <a class="button" target="_blank" rel="noopener" href="https://wa.me/22797456916?text=Bonjour%2C%20je%20souhaite%20commander%20ESP32%20WiFi%20(9%20000%20FCFA)%20x1.">Commander via WhatsApp (N°2)</a>
+      </div>
 
-            <article class="product-card">
-                <img loading="lazy" src="image/Nano.png" alt="Arduino Nano microcontrôleur" class="product-image" width="300" height="200">
-                <div class="product-content">
-                    <h3 class="product-title">Arduino Nano</h3>
-                    <p class="product-price">9 000 FCFA</p>
-                    <p class="product-desc">Microcontrôleur compact et polyvalent, parfait pour les projets embarqués de petite taille.</p>
-                    <div class="product-media">
-                        <video controls preload="metadata" poster="image/nano-poster.jpg" class="product-video">
-                            <source src="videos/cccc.mp4" type="video/mp4">
-                            Votre navigateur ne supporte pas la lecture vidéo.
-                        </video>
-                    </div>
-                    <div class="product-actions">
-                        <a href="#" class="btn btn-primary">Commander</a>
-                        <button class="btn btn-secondary" onclick="toggleDetails(this)">Détails</button>
-                    </div>
-                    <div class="product-details" style="display: none;">
-                        <h4>Spécifications techniques :</h4>
-                        <ul>
-                            <li>Microcontrôleur ATmega328P</li>
-                            <li>14 broches E/S numériques</li>
-                            <li>8 entrées analogiques</li>
-                            <li>Tension de fonctionnement : 5V</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
+      <form action="https://formspree.io/f/mdkdblzw" method="POST" class="order-form">
+        <input type="hidden" name="_subject" value="Commande - ESP32 WiFi" />
+        <input type="hidden" name="produit" value="ESP32 WiFi" />
+        <input type="hidden" name="prix" value="9000 FCFA" />
+        <label>Nom et prénom :</label>
+        <input type="text" name="nom" required />
+        <label>Téléphone :</label>
+        <input type="tel" name="telephone" required />
+        <label>Quantité :</label>
+        <input type="number" name="quantite" min="1" value="1" required />
+        <label>Email :</label>
+        <input type="email" name="email" />
+        <button type="submit" class="button">Commander par formulaire</button>
+      </form>
+    </section>
 
-            <article class="product-card">
-                <img loading="lazy" src="image/pont.png" alt="Pont en H contrôleur moteur" class="product-image" width="300" height="200">
-                <div class="product-content">
-                    <h3 class="product-title">Pont en H</h3>
-                    <p class="product-price">9 000 FCFA</p>
-                    <p class="product-desc">Contrôleur de moteur bidirectionnel, essentiel pour la robotique et l'automatisation.</p>
-                    <div class="product-media">
-                        <video controls preload="metadata" poster="image/pont-poster.jpg" class="product-video">
-                            <source src="videos/cccc.mp4" type="video/mp4">
-                            Votre navigateur ne supporte pas la lecture vidéo.
-                        </video>
-                    </div>
-                    <div class="product-actions">
-                        <a href="#" class="btn btn-primary">Commander</a>
-                        <button class="btn btn-secondary" onclick="toggleDetails(this)">Détails</button>
-                    </div>
-                    <div class="product-details" style="display: none;">
-                        <h4>Spécifications techniques :</h4>
-                        <ul>
-                            <li>Tension d'alimentation : 5-35V</li>
-                            <li>Courant max : 2A par canal</li>
-                            <li>Protection thermique intégrée</li>
-                            <li>Compatible Arduino et Raspberry Pi</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-        </section>
+    <section class="produit card">
+      <h3>Arduino Nano</h3>
+      <p class="price">Prix : 9 000 FCFA</p>
+      <div class="media">
+        <img src="image/Nano.png" alt="Arduino Nano microcontrôleur" />
+        <video controls preload="metadata" src="videos/cccc.mp4"></video>
+      </div>
+      <p>Description : Microcontrôleur compact et polyvalent.</p>
 
-        <section class="cta-section">
-            <div class="cta-content">
-                <h2>Besoin d'aide pour choisir ?</h2>
-                <p>Notre équipe technique est là pour vous conseiller dans vos projets</p>
-                <a href="contact.html" class="btn btn-primary">Nous contacter</a>
-            </div>
-        </section>
-    </main>
+      <div class="actions">
+        <a class="button" target="_blank" rel="noopener" href="https://wa.me/22789631595?text=Bonjour%2C%20je%20souhaite%20commander%20Arduino%20Nano%20(9%20000%20FCFA)%20x1.">Commander via WhatsApp (N°1)</a>
+        <a class="button" target="_blank" rel="noopener" href="https://wa.me/22797456916?text=Bonjour%2C%20je%20souhaite%20commander%20Arduino%20Nano%20(9%20000%20FCFA)%20x1.">Commander via WhatsApp (N°2)</a>
+      </div>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>📍 Niamey/Niger</p>
-                    <p>📞 +227 89 63 15 95</p>
-                    <p>✉️ wwww.adamoualhou25@gmail.com</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Horaires</h3>
-                    <p>Lun - Ven : 8h - 18h</p>
-                    <p>Sam : 9h - 16h</p>
-                    <p>Dim : Fermé</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Suivez-nous</h3>
-                    <div class="social-links">
-                        <a href="#" aria-label="WhatsApp">📱</a>
-                        <a href="#" aria-label="Facebook">📘</a>
-                        <a href="#" aria-label="Instagram">📷</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Boutique Électronique. Tous droits réservés.</p>
-            </div>
-        </div>
-    </footer>
+      <form action="https://formspree.io/f/mdkdblzw" method="POST" class="order-form">
+        <input type="hidden" name="_subject" value="Commande - Arduino Nano" />
+        <input type="hidden" name="produit" value="Arduino Nano" />
+        <input type="hidden" name="prix" value="9000 FCFA" />
+        <label>Nom et prénom :</label>
+        <input type="text" name="nom" required />
+        <label>Téléphone :</label>
+        <input type="tel" name="telephone" required />
+        <label>Quantité :</label>
+        <input type="number" name="quantite" min="1" value="1" required />
+        <label>Email :</label>
+        <input type="email" name="email" />
+        <button type="submit" class="button">Commander par formulaire</button>
+      </form>
+    </section>
 
-    <script>
-        // Menu mobile toggle
-        const navToggle = document.querySelector('.nav-toggle');
-        const siteNav = document.querySelector('.site-nav');
-        
-        navToggle.addEventListener('click', () => {
-            const isOpen = siteNav.classList.contains('open');
-            siteNav.classList.toggle('open');
-            navToggle.setAttribute('aria-expanded', !isOpen);
-        });
+    <section class="produit card">
+      <h3>Pont en H</h3>
+      <p class="price">Prix : 9 000 FCFA</p>
+      <div class="media">
+        <img src="image/pont.png" alt="Pont en H contrôleur moteur" />
+        <video controls preload="metadata" src="videos/cccc.mp4"></video>
+      </div>
+      <p>Description : Contrôleur de moteur bidirectionnel.</p>
 
-        // Toggle product details
-        function toggleDetails(button) {
-            const details = button.closest('.product-card').querySelector('.product-details');
-            const isVisible = details.style.display !== 'none';
-            details.style.display = isVisible ? 'none' : 'block';
-            button.textContent = isVisible ? 'Détails' : 'Masquer';
-        }
-    </script>
+      <div class="actions">
+        <a class="button" target="_blank" rel="noopener" href="https://wa.me/22789631595?text=Bonjour%2C%20je%20souhaite%20commander%20Pont%20en%20H%20(9%20000%20FCFA)%20x1.">Commander via WhatsApp (N°1)</a>
+        <a class="button" target="_blank" rel="noopener" href="https://wa.me/22797456916?text=Bonjour%2C%20je%20souhaite%20commander%20Pont%20en%20H%20(9%20000%20FCFA)%20x1.">Commander via WhatsApp (N°2)</a>
+      </div>
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "itemListElement": [
-            {
-                "@type": "Product",
-                "position": 1,
-                "name": "ESP32 WiFi",
-                "description": "Module WiFi/Bluetooth très performant",
-                "offers": {
-                    "@type": "Offer",
-                    "price": "9000",
-                    "priceCurrency": "XOF"
-                }
-            },
-            {
-                "@type": "Product",
-                "position": 2,
-                "name": "Arduino Nano",
-                "description": "Microcontrôleur compact et polyvalent",
-                "offers": {
-                    "@type": "Offer",
-                    "price": "9000",
-                    "priceCurrency": "XOF"
-                }
-            },
-            {
-                "@type": "Product",
-                "position": 3,
-                "name": "Pont en H",
-                "description": "Contrôleur de moteur bidirectionnel",
-                "offers": {
-                    "@type": "Offer",
-                    "price": "9000",
-                    "priceCurrency": "XOF"
-                }
-            }
-        ]
-    }
-    </script>
+      <form action="https://formspree.io/f/mdkdblzw" method="POST" class="order-form">
+        <input type="hidden" name="_subject" value="Commande - Pont en H" />
+        <input type="hidden" name="produit" value="Pont en H" />
+        <input type="hidden" name="prix" value="9000 FCFA" />
+        <label>Nom et prénom :</label>
+        <input type="text" name="nom" required />
+        <label>Téléphone :</label>
+        <input type="tel" name="telephone" required />
+        <label>Quantité :</label>
+        <input type="number" name="quantite" min="1" value="1" required />
+        <label>Email :</label>
+        <input type="email" name="email" />
+        <button type="submit" class="button">Commander par formulaire</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+  <script>
+    fetch('partials/footer.html')
+      .then(r => r.text())
+      .then(html => { document.getElementById('footer').innerHTML = html; })
+      .catch(err => console.error('Erreur chargement footer:', err));
+  </script>
 </body>
 </html>
-
