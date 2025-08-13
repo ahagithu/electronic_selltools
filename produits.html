@@ -108,37 +108,91 @@ function toggleDetails(id) {
 
 
 
-    <!-- Arduino Nano -->
-    <section class="produit card">
-      <h3>Arduino Nano</h3>
-      <p class="price">Prix : 9 000 FCFA</p>
-      <div class="media">
-        <img src="image/Nano.png" alt="Arduino Nano microcontrôleur" />
-        <video controls preload="metadata" src="videos/cccc.mp4"></video>
-      </div>
-      <p>Description : Microcontrôleur compact et polyvalent.</p>
+   <!-- Arduino Nano -->
+<section class="produit card">
+  <h3>Arduino Nano</h3>
+  <p class="price">Prix : 9 000 FCFA</p>
+  <div class="media">
+    <img src="image/Nano.png" alt="Arduino Nano microcontrôleur" />
+    <video controls preload="metadata" src="videos/cccc.mp4"></video>
+  </div>
 
-      <div class="actions">
-        <a class="button" target="_blank" rel="noopener" href="https://wa.me/22789631595?text=Bonjour%2C%20je%20souhaite%20commander%20Arduino%20Nano%20(9%20000%20FCFA)%20x1.">Commander via WhatsApp (N°1)</a>
-        <a class="button" target="_blank" rel="noopener" href="https://wa.me/22793033158?text=Bonjour%2C%20je%20souhaite%20commander%20Arduino%20Nano%20(9%20000%20FCFA)%20x1.">Commander via WhatsApp (N°2)</a>
-      </div>
+  <!-- Bouton pour afficher/masquer les détails -->
+  <button onclick="toggleDetails('nano-details')">Voir détails</button>
 
-      <form action="https://formspree.io/f/mdkdblzw" method="POST" class="order-form">
-        <input type="hidden" name="_subject" value="Commande - Arduino Nano" />
-        <input type="hidden" name="_redirect" value="https://ahagithu.github.io/electronic_selltools/merci.html" />
-        <input type="hidden" name="produit" value="Arduino Nano" />
-        <input type="hidden" name="prix" value="9000 FCFA" />
-        <label>Nom et prénom :</label>
-        <input type="text" name="nom" required />
-        <label>Téléphone :</label>
-        <input type="tel" name="telephone" required />
-        <label>Quantité :</label>
-        <input type="number" name="quantite" min="1" value="1" required />
-        <label>Email :</label>
-        <input type="email" name="email" />
-        <button type="submit" class="button">Commander par formulaire</button>
-      </form>
-    </section>
+  <!-- Détails masqués par défaut -->
+  <div id="nano-details" style="display:none; margin-top:10px;">
+    <h2>Microcontrôleur Arduino Nano</h2>
+    <p>
+      L’<strong>Arduino Nano</strong> est un microcontrôleur compact et économique, idéal pour les projets nécessitant
+      un encombrement réduit tout en conservant toutes les fonctionnalités d’une carte Arduino classique.
+    </p>
+
+    <h3>Caractéristiques principales :</h3>
+    <ul>
+      <li>Microcontrôleur : ATmega328P</li>
+      <li>Tension de fonctionnement : 5V</li>
+      <li>Entrées/sorties : 14 broches numériques, dont 6 PWM</li>
+      <li>Entrées analogiques : 8</li>
+      <li>Fréquence d’horloge : 16 MHz</li>
+      <li>Mémoire Flash : 32 Ko</li>
+      <li>Communication : UART, SPI, I2C</li>
+      <li>Alimentation : via USB ou pin Vin (7-12V)</li>
+    </ul>
+
+    <h3>Avantages :</h3>
+    <ul>
+      <li>Format compact, facile à intégrer dans les projets</li>
+      <li>Programmable via Arduino IDE</li>
+      <li>Compatible avec la plupart des shields et modules Arduino</li>
+      <li>Coût abordable pour un large éventail d’applications</li>
+    </ul>
+
+    <h3>Limitations :</h3>
+    <ul>
+      <li>Pas de connectivité WiFi ou Bluetooth intégrée</li>
+      <li>Puissance de calcul limitée par rapport à des cartes comme l’ESP32</li>
+    </ul>
+
+    <p>
+      En résumé, l’<strong>Arduino Nano</strong> est parfait pour les projets d’apprentissage, de prototypage et d’intégration dans des systèmes compacts.
+    </p>
+  </div>
+
+  <!-- Boutons de commande -->
+  <div class="actions" style="margin-top:10px;">
+    <a class="button" target="_blank" rel="noopener" href="https://wa.me/22789631595?text=Bonjour%2C%20je%20souhaite%20commander%20Arduino%20Nano%20(9%20000%20FCFA)%20x1.">Commander via WhatsApp (N°1)</a>
+    <a class="button" target="_blank" rel="noopener" href="https://wa.me/22793033158?text=Bonjour%2C%20je%20souhaite%20commander%20Arduino%20Nano%20(9%20000%20FCFA)%20x1.">Commander via WhatsApp (N°2)</a>
+  </div>
+
+  <!-- Formulaire de commande -->
+  <form action="https://formspree.io/f/mdkdblzw" method="POST" class="order-form">
+    <input type="hidden" name="_subject" value="Commande - Arduino Nano" />
+    <input type="hidden" name="_redirect" value="https://ahagithu.github.io/electronic_selltools/merci.html" />
+    <input type="hidden" name="produit" value="Arduino Nano" />
+    <input type="hidden" name="prix" value="9000 FCFA" />
+    <label>Nom et prénom :</label>
+    <input type="text" name="nom" required />
+    <label>Téléphone :</label>
+    <input type="tel" name="telephone" required />
+    <label>Quantité :</label>
+    <input type="number" name="quantite" min="1" value="1" required />
+    <label>Email :</label>
+    <input type="email" name="email" />
+    <button type="submit" class="button">Commander par formulaire</button>
+  </form>
+</section>
+
+<script>
+function toggleDetails(id) {
+  let details = document.getElementById(id);
+  if (details.style.display === "none" || details.style.display === "") {
+    details.style.display = "block";
+  } else {
+    details.style.display = "none";
+  }
+}
+</script>
 
     <!-- Pont en H -->
     <section class="produit card">
@@ -282,6 +336,7 @@ function toggleDetails(id) {
   </script>
 </body>
 </html>
+
 
 
 
