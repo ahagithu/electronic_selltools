@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Merci — Boutique Électronique</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Merci pour votre message. Nous vous répondrons rapidement." />
+  <link rel="stylesheet" href="style.css" />
+  <meta http-equiv="refresh" content="6; url=index.html">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Merci pour votre message</h1>
+    <nav class="site-nav">
+      <a href="index.html">Accueil</a>
+      <a href="produits.html">Produits</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Votre demande a bien été envoyée</h2>
+      <p>Nous vous répondrons très rapidement. Vous serez automatiquement redirigé(e) vers l’accueil dans quelques secondes.</p>
+      <p>Vous pouvez aussi naviguer directement ici :</p>
+      <p>
+        <a class="button" href="index.html">Retour à l’accueil</a>
+        <a class="button" href="produits.html" style="margin-left:8px;">Voir les produits</a>
+      </p>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+  <script>
+    fetch('partials/footer.html')
+      .then(r => r.text())
+      .then(html => { document.getElementById('footer').innerHTML = html; })
+      .catch(err => console.error('Erreur chargement footer:', err));
+  </script>
+</body>
+</html>
