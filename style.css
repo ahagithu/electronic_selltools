@@ -157,3 +157,67 @@ footer .footer-bottom {
   margin-top: 40px;
 }
 
+
+/* ====== Cartes produit ====== */
+.produit.card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  margin-bottom: 40px;
+  transition: transform 0.2s ease;
+}
+
+.produit.card:hover {
+  transform: translateY(-5px);
+}
+
+.produit.card h3 {
+  color: #004080;
+}
+
+.price {
+  font-weight: bold;
+  color: #e60000;
+  margin-bottom: 15px;
+}
+
+/* ====== Images et vidéos ====== */
+.media {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 15px;
+  justify-content: center;
+}
+
+.media img, .media video {
+  max-width: 350px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* ====== Boutons ====== */
+.button, button {
+  display: inline-block;
+  background-color: #004080;
+  color: white;
+  padding: 12px 20px;
+  margin: 10px 5px 0 0;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover, button:hover {
+  background-color: #0066cc;
+}
+/* ====== Actions ====== */
+.actions {
+  margin-top: 15px;
+  text-align: center;
+}
