@@ -111,3 +111,37 @@ body {
   font-size: 14px;
 }
 
+/* Base et ton style existant ici... */
+
+/* Carrousel Produits */
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 280px;
+  max-width: 300px;
+  margin: 0 12px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.carousel-slide img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+
