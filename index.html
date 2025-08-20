@@ -59,59 +59,6 @@
       .then(r => r.text())
       .then(html => { document.getElementById('footer').innerHTML = html; })
       .catch(err => console.error('Erreur chargement footer:', err));
-
-    // --- Produits disponibles ---
-    const produits = [
-      {
-        nom: "ESP32 WiFi/Bluetooth",
-        prix: "9 000 FCFA",
-        img: "image/esp32.png",
-        lien: "produits.html#esp32"
-      },
-      {
-        nom: "Arduino Nano",
-        prix: "5 500 FCFA",
-        img: "image/arduino-nano.png",
-        lien: "produits.html#nano"
-      },
-      {
-        nom: "Pont en H L298N",
-        prix: "4 000 FCFA",
-        img: "image/l298n.png",
-        lien: "produits.html#l298n"
-      },
-      {
-        nom: "Capteur DHT11",
-        prix: "2 500 FCFA",
-        img: "image/dht11.png",
-        lien: "produits.html#dht11"
-      }
-    ];
-
-    // Fonction pour mélanger le tableau
-    function shuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    }
-
-    // Choisir 3 produits aléatoires
-    const produitsAleatoires = shuffle([...produits]).slice(0, 3);
-
-    // Injection HTML
-    const container = document.getElementById("produits-random");
-    produitsAleatoires.forEach(p => {
-      container.innerHTML += `
-        <div class="feature card">
-          <img src="${p.img}" alt="${p.nom}" style="max-width:100%; border-radius:6px; margin-bottom:8px;" />
-          <h4>${p.nom}</h4>
-          <p class="price">${p.prix}</p>
-          <a href="${p.lien}" class="button">Voir</a>
-        </div>
-      `;
-    });
   </script>
 </body>
 </html>
