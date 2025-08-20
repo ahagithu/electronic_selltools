@@ -1,147 +1,96 @@
-/* Base */
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
 body {
   font-family: Arial, sans-serif;
-  background-color: #f6f8fb;
-  color: #0f172a;
+  margin: 0;
+  padding: 0;
   line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
-/* Layout helpers */
-.container { width: min(1100px, 92%); margin: 0 auto; }
-.card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 18px;
-  margin: 18px 0;
-}
-
-/* Header + Nav */
 .site-header {
-  background: #111827;
+  background-color: #222;
   color: #fff;
-  padding: 16px 0;
-  margin-bottom: 10px;
+  padding: 16px;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
 }
-.site-header h1 { margin: 0 0 8px; font-size: 22px; text-align: center; }
-.site-nav { display: flex; gap: 16px; justify-content: center; }
-.site-nav a {
-  color: #e5e7eb;
-  text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 6px;
-}
-.site-nav a:hover { background: #1f2937; }
 
-/* Buttons */
+.site-nav a {
+  color: #fff;
+  margin: 0 12px;
+  text-decoration: none;
+}
+
 .button {
   display: inline-block;
-  background: #22c55e;
-  color: #04111A;
-  padding: 10px 14px;
+  padding: 12px 24px;
+  background-color: #007BFF;
+  color: #fff;
   border-radius: 8px;
   text-decoration: none;
-  border: none;
-  font-weight: 700;
-  cursor: pointer;
+  margin-top: 12px;
 }
-.button:hover { background: #16a34a; }
 
-/* Sections */
-.hero {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 24px;
-  margin: 18px 0;
+/* Fullscreen slider */
+.bg-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* fullscreen */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-image 1s ease-in-out;
+}
+
+.bg-slider .overlay {
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  padding: 40px;
+  border-radius: 12px;
   text-align: center;
 }
-.section { margin: 24px 0; }
-.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
-.feature { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px; }
 
-/* Produits */
-.produit { margin: 24px 0; }
-.price { font-weight: 700; color: #16a34a; }
-.media {
+.bg-slider h2 {
+  font-size: 3em;
+  margin-bottom: 12px;
+}
+
+.bg-slider p.price {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* Features section */
+.section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.features {
   display: flex;
-  gap: 16px;
-  align-items: flex-start;
+  gap: 20px;
+  justify-content: space-around;
   flex-wrap: wrap;
-  margin: 10px 0 12px;
-}
-.media img, .media video {
-  flex: 1 1 280px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
 }
 
-/* Actions + Formulaires commande */
-.actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0; }
-.order-form { display: grid; gap: 8px; margin-top: 8px; }
-.order-form input, .order-form textarea, .order-form select {
-  padding: 9px 10px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  font-size: 14px;
+.feature {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1 1 200px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-.order-form button { width: fit-content; }
-
-/* Contact */
-.contact-form { display: grid; gap: 10px; }
 
 /* Footer */
-.site-footer { background: #111827; color: #d1d5db; margin-top: 26px; }
-.footer-inner {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap: 18px;
-  padding: 18px 0;
-}
-.site-footer a { color: #93c5fd; text-decoration: none; }
-.site-footer a:hover { text-decoration: underline; }
-.footer-bottom {
-  border-top: 1px solid #1f2937;
+#footer {
+  background-color: #222;
+  color: #fff;
   text-align: center;
-  padding: 12px 0 16px;
-  font-size: 14px;
+  padding: 24px 0;
 }
-
-/* Base et ton style existant ici... */
-
-/* Carrousel Produits */
-.carousel-container {
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  margin-top: 16px;
-}
-
-.carousel {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-  min-width: 280px;
-  max-width: 300px;
-  margin: 0 12px;
-  text-align: center;
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 16px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-
-.carousel-slide img {
-  border-radius: 8px;
-  max-width: 100%;
-  height: auto;
-}
-
