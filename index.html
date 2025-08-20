@@ -44,17 +44,56 @@
       </div>
     </section>
 
-    <!-- Produits en vedette -->
+    <!-- Produits en vedette (Carrousel) -->
     <section class="section">
       <h3>Produits en vedette</h3>
-      <div id="produits-random" class="features"></div>
+      <div class="carousel-container">
+        <div class="carousel" id="produits-random">
+          <!-- Les produits seront injectés ici par JS -->
+        </div>
+      </div>
     </section>
   </main>
 
   <!-- Footer chargé dynamiquement -->
   <div id="footer"></div>
+
   <script>
-    // Charger le footer externe
+    // Exemple de produits (remplace par ton vrai contenu)
+    const produits = [
+      { nom: "ESP32 Dev Board", prix: "5500 XOF", img: "images/esp32.jpg" },
+      { nom: "Arduino Uno", prix: "4500 XOF", img: "images/arduino.jpg" },
+      { nom: "Module relais 5V", prix: "1200 XOF", img: "images/relais.jpg" },
+      { nom: "Capteur DHT11", prix: "1000 XOF", img: "images/dht11.jpg" }
+    ];
+
+    const carousel = document.getElementById('produits-random');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      carousel.innerHTML = "";
+      const produit = produits[index];
+      const slide = document.createElement('div');
+      slide.className = "carousel-slide";
+      slide.innerHTML = `
+        <div class="media">
+          <img src="${produit.img}" alt="${produit.nom}" />
+        </div>
+        <h4>${produit.nom}</h4>
+        <p class="price">${produit.prix}</p>
+      `;
+      carousel.appendChild(slide);
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % produits.length;
+      showSlide(currentIndex);
+    }
+
+    showSlide(currentIndex);
+    setInterval(nextSlide, 3000); // changement toutes les 3 secondes
+
+    // Footer dynamique
     fetch('partials/footer.html')
       .then(r => r.text())
       .then(html => { document.getElementById('footer').innerHTML = html; })
