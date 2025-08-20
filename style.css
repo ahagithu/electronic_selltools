@@ -68,12 +68,12 @@ body {
 .media {
   display: flex;
   gap: 16px;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   margin: 10px 0 12px;
 }
 .media img, .media video {
-  width: 38%;
+  flex: 1 1 280px;
   max-width: 100%;
   height: auto;
   border-radius: 8px;
@@ -110,3 +110,4 @@ body {
   padding: 12px 0 16px;
   font-size: 14px;
 }
+
