@@ -18,12 +18,14 @@
   </header>
 
   <main class="container">
+    <!-- Section Hero -->
     <section class="hero">
       <h2>Matériel et composants pour vos projets</h2>
       <p>ESP32, Arduino, ponts en H et plus. Commande rapide par WhatsApp ou via formulaire sécurisé.</p>
       <a href="produits.html" class="button">Voir les produits</a>
     </section>
 
+    <!-- Pourquoi nous choisir -->
     <section class="section">
       <h3>Pourquoi nous choisir ?</h3>
       <div class="features">
@@ -41,14 +43,75 @@
         </div>
       </div>
     </section>
+
+    <!-- Produits en vedette -->
+    <section class="section">
+      <h3>Produits en vedette</h3>
+      <div id="produits-random" class="features"></div>
+    </section>
   </main>
 
+  <!-- Footer chargé dynamiquement -->
   <div id="footer"></div>
   <script>
+    // Charger le footer externe
     fetch('partials/footer.html')
       .then(r => r.text())
       .then(html => { document.getElementById('footer').innerHTML = html; })
       .catch(err => console.error('Erreur chargement footer:', err));
+
+    // --- Produits disponibles ---
+    const produits = [
+      {
+        nom: "ESP32 WiFi/Bluetooth",
+        prix: "9 000 FCFA",
+        img: "image/esp32.png",
+        lien: "produits.html#esp32"
+      },
+      {
+        nom: "Arduino Nano",
+        prix: "5 500 FCFA",
+        img: "image/arduino-nano.png",
+        lien: "produits.html#nano"
+      },
+      {
+        nom: "Pont en H L298N",
+        prix: "4 000 FCFA",
+        img: "image/l298n.png",
+        lien: "produits.html#l298n"
+      },
+      {
+        nom: "Capteur DHT11",
+        prix: "2 500 FCFA",
+        img: "image/dht11.png",
+        lien: "produits.html#dht11"
+      }
+    ];
+
+    // Fonction pour mélanger le tableau
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    // Choisir 3 produits aléatoires
+    const produitsAleatoires = shuffle([...produits]).slice(0, 3);
+
+    // Injection HTML
+    const container = document.getElementById("produits-random");
+    produitsAleatoires.forEach(p => {
+      container.innerHTML += `
+        <div class="feature card">
+          <img src="${p.img}" alt="${p.nom}" style="max-width:100%; border-radius:6px; margin-bottom:8px;" />
+          <h4>${p.nom}</h4>
+          <p class="price">${p.prix}</p>
+          <a href="${p.lien}" class="button">Voir</a>
+        </div>
+      `;
+    });
   </script>
 </body>
 </html>
