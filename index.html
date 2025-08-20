@@ -17,41 +17,33 @@
     </nav>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <h2>Matériel et composants pour vos projets</h2>
-      <p>ESP32, Arduino, ponts en H et plus. Commande rapide par WhatsApp ou via formulaire sécurisé.</p>
+  <!-- Slider fullscreen -->
+  <main class="bg-slider" id="bg-slider">
+    <div class="overlay">
+      <h2>Produits en vedette</h2>
+      <p id="produit-nom"></p>
+      <p class="price" id="produit-prix"></p>
       <a href="produits.html" class="button">Voir les produits</a>
-    </section>
-
-    <section class="section">
-      <h3>Pourquoi nous choisir ?</h3>
-      <div class="features">
-        <div class="feature">
-          <strong>Livraison rapide</strong>
-          <p>Expédition sous 24h à Niamey, et options pour le reste du Niger.</p>
-        </div>
-        <div class="feature">
-          <strong>Qualité garantie</strong>
-          <p>Composants testés et vérifiés avant envoi.</p>
-        </div>
-        <div class="feature">
-          <strong>Support technique</strong>
-          <p>Conseil pour choisir et intégrer vos composants.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Slider produits en background -->
-    <section class="section bg-slider" id="bg-slider">
-      <div class="overlay">
-        <h3>Produits en vedette</h3>
-        <p id="produit-nom"></p>
-        <p class="price" id="produit-prix"></p>
-      </div>
-    </section>
-
+    </div>
   </main>
+
+  <section class="section">
+    <h3>Pourquoi nous choisir ?</h3>
+    <div class="features">
+      <div class="feature">
+        <strong>Livraison rapide</strong>
+        <p>Expédition sous 24h à Niamey, et options pour le reste du Niger.</p>
+      </div>
+      <div class="feature">
+        <strong>Qualité garantie</strong>
+        <p>Composants testés et vérifiés avant envoi.</p>
+      </div>
+      <div class="feature">
+        <strong>Support technique</strong>
+        <p>Conseil pour choisir et intégrer vos composants.</p>
+      </div>
+    </div>
+  </section>
 
   <div id="footer"></div>
   <script>
@@ -86,7 +78,7 @@
     setInterval(() => {
       currentBG = (currentBG + 1) % produitsBG.length;
       showBGSlide(currentBG);
-    }, 4000); // change toutes les 4s
+    }, 4000);
   </script>
 </body>
 </html>
