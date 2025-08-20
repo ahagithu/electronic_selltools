@@ -18,14 +18,12 @@
   </header>
 
   <main class="container">
-    <!-- Section Hero -->
     <section class="hero">
       <h2>Matériel et composants pour vos projets</h2>
       <p>ESP32, Arduino, ponts en H et plus. Commande rapide par WhatsApp ou via formulaire sécurisé.</p>
       <a href="produits.html" class="button">Voir les produits</a>
     </section>
 
-    <!-- Pourquoi nous choisir -->
     <section class="section">
       <h3>Pourquoi nous choisir ?</h3>
       <div class="features">
@@ -44,60 +42,51 @@
       </div>
     </section>
 
-    <!-- Produits en vedette (Carrousel) -->
-    <section class="section">
-      <h3>Produits en vedette</h3>
-      <div class="carousel-container">
-        <div class="carousel" id="produits-random">
-          <!-- Les produits seront injectés ici par JS -->
-        </div>
+    <!-- Slider produits en background -->
+    <section class="section bg-slider" id="bg-slider">
+      <div class="overlay">
+        <h3>Produits en vedette</h3>
+        <p id="produit-nom"></p>
+        <p class="price" id="produit-prix"></p>
       </div>
     </section>
+
   </main>
 
-  <!-- Footer chargé dynamiquement -->
   <div id="footer"></div>
+  <script>
+    fetch('partials/footer.html')
+      .then(r => r.text())
+      .then(html => { document.getElementById('footer').innerHTML = html; })
+      .catch(err => console.error('Erreur chargement footer:', err));
+  </script>
 
   <script>
-    // Exemple de produits (remplace par ton vrai contenu)
-    const produits = [
+    const produitsBG = [
       { nom: "ESP32 Dev Board", prix: "5500 XOF", img: "images/esp32.jpg" },
       { nom: "Arduino Uno", prix: "4500 XOF", img: "images/arduino.jpg" },
       { nom: "Module relais 5V", prix: "1200 XOF", img: "images/relais.jpg" },
       { nom: "Capteur DHT11", prix: "1000 XOF", img: "images/dht11.jpg" }
     ];
 
-    const carousel = document.getElementById('produits-random');
-    let currentIndex = 0;
+    const sliderSection = document.getElementById('bg-slider');
+    const nomProduit = document.getElementById('produit-nom');
+    const prixProduit = document.getElementById('produit-prix');
 
-    function showSlide(index) {
-      carousel.innerHTML = "";
-      const produit = produits[index];
-      const slide = document.createElement('div');
-      slide.className = "carousel-slide";
-      slide.innerHTML = `
-        <div class="media">
-          <img src="${produit.img}" alt="${produit.nom}" />
-        </div>
-        <h4>${produit.nom}</h4>
-        <p class="price">${produit.prix}</p>
-      `;
-      carousel.appendChild(slide);
+    let currentBG = 0;
+
+    function showBGSlide(index) {
+      const produit = produitsBG[index];
+      sliderSection.style.backgroundImage = `url('${produit.img}')`;
+      nomProduit.textContent = produit.nom;
+      prixProduit.textContent = produit.prix;
     }
 
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % produits.length;
-      showSlide(currentIndex);
-    }
-
-    showSlide(currentIndex);
-    setInterval(nextSlide, 3000); // changement toutes les 3 secondes
-
-    // Footer dynamique
-    fetch('partials/footer.html')
-      .then(r => r.text())
-      .then(html => { document.getElementById('footer').innerHTML = html; })
-      .catch(err => console.error('Erreur chargement footer:', err));
+    showBGSlide(currentBG);
+    setInterval(() => {
+      currentBG = (currentBG + 1) % produitsBG.length;
+      showBGSlide(currentBG);
+    }, 4000); // change toutes les 4s
   </script>
 </body>
 </html>
